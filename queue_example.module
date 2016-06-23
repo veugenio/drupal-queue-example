@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function queue_example_menu() {
+  $items = array();
+
+  $items['queue-example'] = array(
+    'title' => 'Queue examples',
+    'page callback' => 'queue_examples',
+    'access callback' => TRUE,
+  );
+  
+  // Simplest queue implementation.
+  $items['queue-example/1-0'] = array(
+    'title' => 'Queue example 1',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('queue_example_1'),
+    'access callback' => TRUE,
+    'file' => 'inc/queue_example_1.inc',
+  );
+  $items['queue-example/1-1'] = array(
+    'title' => 'Queue example 1.1',
+    'page callback' => 'queue_example_1_1',
+    'access callback' => TRUE,
+    'file' => 'inc/queue_example_1_1.inc',
+  );
+  $items['queue-example/1-2'] = array(
+    'title' => 'Queue example 1.2',
+    'page callback' => 'queue_example_1_2',
+    'access callback' => TRUE,
+    'file' => 'inc/queue_example_1_2.inc',
+  );
+  $items['queue-example/1-3'] = array(
+    'title' => 'Queue example 1.3',
+    'page callback' => 'queue_example_1_3',
+    'access callback' => TRUE,
+    'file' => 'inc/queue_example_1_3.inc',
+  );
+
+  return $items;
+}
+
+
+function queue_examples() {
+  // throw new Exception;
+  // drupal_deliver_page(MENU_ACCESS_DENIED);
+  return t('Some queue examples');
+}

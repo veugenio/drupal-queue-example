@@ -1,0 +1,6 @@
+name = Queue example
+description = Queue examples.
+core = 7.x
+package = Examples
+files[] = queue_example.test
+
