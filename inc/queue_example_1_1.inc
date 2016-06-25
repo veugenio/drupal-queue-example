@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Simplest queue implementation.
+ * Queue with another class.
  */
 
 /**
